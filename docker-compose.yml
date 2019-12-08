@@ -1,0 +1,12 @@
+version: '2'
+services:
+ education-post:
+    image: postgres
+    container_name: education-postgres
+    hostname: education-postgres
+    environment:
+      POSTGRES_DB: education
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass123!
+    ports:
+      - "5432:5432"
