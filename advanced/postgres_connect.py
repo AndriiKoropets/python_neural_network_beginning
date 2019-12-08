@@ -7,6 +7,8 @@ try:
                                   database = "education")
 
     cursor = connection.cursor()
+    print(cursor)
+    print(connection)
     # Print PostgreSQL Connection properties
     print ( connection.get_dsn_parameters(),"\n")
 
