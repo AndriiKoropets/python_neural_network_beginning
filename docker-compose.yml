@@ -2,10 +2,10 @@ version: '2'
 services:
  education-post:
     image: postgres
-    container_name: education-postgres
-    hostname: education-postgres
+    container_name: comment-analysis-postgres
+    hostname: comment-analysis-postgres
     environment:
-      POSTGRES_DB: education
+      POSTGRES_DB: media_comments
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: pass123!
     ports:
