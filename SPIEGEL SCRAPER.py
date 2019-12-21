@@ -28,7 +28,7 @@ soup = bs.BeautifulSoup(sauce, 'lxml')
 
 
 for name in soup.find_all('span', {'class': 'headline'}):
-    print(name.text)X
+    print(name.text)
 
 
 # In[28]:
