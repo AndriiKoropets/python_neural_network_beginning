@@ -1,10 +1,11 @@
+from analysis import config
 import psycopg2
 import re
-connection = psycopg2.connect(user = "admin",
-                              password = "pass123!",
-                              host = "127.0.0.1",
-                              port = "5432",
-                              database = "media_comments")
+connection = psycopg2.connect(user = config.user,
+                              password = config.password,
+                              host = config.host,
+                              port = config.port,
+                              database = config.database)
 
 print("Connected")
 cursor = connection.cursor()
@@ -12,9 +13,7 @@ cursor.execute("SELECT * from Media_Comments;")
 record = cursor.fetchone()
 print("You are connected to - ", record,"\n")
 
-file = open("/home/andrii/Downloads/zeit_nordstream.txt", 'r')
-# file = open("/home/andrii/Downloads/test", 'r')
-# file = open("/home/ashara/projects/head_first_programming/german_project/zeit_nordstream.txt"", 'r')
+file = open(config.file, 'r')
 
 text = file.readlines()
 size = len(text)
@@ -26,9 +25,7 @@ counter_comment_good = 0
 counter_comment_bad = 0
 counter_name_good = 0
 counter_name_bad = 0
-file_for_matching = open("/home/andrii/Downloads/zeit_nordstream.txt", 'r')
-# file_for_matching = open("/home/andrii/Downloads/test", 'r')
-# file_for_matching = open("/home/ashara/projects/head_first_programming/german_project/zeit_nordstream.txt", 'r')
+file_for_matching = open(config.file, 'r')
 i = 0
 username, sentiment, body_of_comment = '', '', ''
 article_name = 'Nord Stream 2: Wolfgang Schäuble kritisiert Ostsee-Pipeline'
