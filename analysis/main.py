@@ -12,22 +12,22 @@ cursor.execute("SELECT * from Media_Comments;")
 record = cursor.fetchone()
 print("You are connected to - ", record,"\n")
 
-# file = open("/home/andri/Downloads/zeit_nordstream.txt", 'r')
-file = open("/home/andrii/Downloads/test", 'r')
+file = open("/home/andrii/Downloads/zeit_nordstream.txt", 'r')
+# file = open("/home/andrii/Downloads/test", 'r')
 # file = open("/home/ashara/projects/head_first_programming/german_project/zeit_nordstream.txt"", 'r')
 
 text = file.readlines()
 size = len(text)
 
 regex_comment = r"\*\*\s*(\S*\s*\S*\s*\S*)\s+\>\>\s*(\w+)\s*\>\>\s+(.*)"
-regex_name = r"\=*\>+\s+\NAME:\s+(.*)"
+regex_name = r"\s*\=*\>*\s*\s*\=*\>*\s*\s*\=*\>*\s*[NAME:]*\s+(.*)"
 
 counter_comment_good = 0
 counter_comment_bad = 0
 counter_name_good = 0
 counter_name_bad = 0
-# file_for_matching = open("/home/andri/Downloads/zeit_nordstream.txt", 'r')
-file_for_matching = open("/home/andrii/Downloads/test", 'r')
+file_for_matching = open("/home/andrii/Downloads/zeit_nordstream.txt", 'r')
+# file_for_matching = open("/home/andrii/Downloads/test", 'r')
 # file_for_matching = open("/home/ashara/projects/head_first_programming/german_project/zeit_nordstream.txt", 'r')
 i = 0
 username, sentiment, body_of_comment = '', '', ''
